@@ -52,12 +52,10 @@ from google.cloud.security.scanner.scanners import scanners_map as sm
 from google.cloud.security.notifier.pipelines import email_scanner_summary_pipeline
 # pylint: enable=line-too-long
 
-
 # TODO: The next editor must remove this disable and correct issues.
 # pylint: disable=missing-type-doc,missing-return-type-doc
 # pylint: disable=missing-param-doc,redundant-returns-doc
 # pylint: disable=differing-param-doc,missing-yield-type-doc
-
 
 # Setup flags
 FLAGS = flags.FLAGS
@@ -83,6 +81,11 @@ LOGGER = log_util.get_logger(__name__)
 SCANNER_OUTPUT_CSV_FMT = 'scanner_output.{}.csv'
 OUTPUT_TIMESTAMP_FMT = '%Y%m%dT%H%M%SZ'
 
+####TEST#####
+#from google.cloud.security.common.data_access import instance_dao
+#instance_dao.InstanceDao().get_project_network_subnet('20170619T223739Z')
+#exit()
+####TEST#####
 
 def main(_):
     """Run the scanner."""
@@ -124,7 +127,6 @@ def main(_):
         rules_engine = em.ENGINE_TO_DATA_MAP[rules_engine_name](
             rules_file_path=FLAGS.rules, snapshot_timestamp=snapshot_timestamp)
         rules_engine.build_rule_book()
-
         iter_objects, resource_counts = scanner.run()
 
         # Load violations processing function

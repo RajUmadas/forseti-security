@@ -153,7 +153,8 @@ class BucketsRuleBook(bre.BaseRuleBook):
                 escape_and_globify(email),
                 escape_and_globify(domain),
                 escape_and_globify(role.upper()))
-
+            print "RAJRAJAJ"
+            print rule_def_resource
             rule = Rule(rule_name=rule_def.get('name'),
                         rule_index=rule_index,
                         rules=rule_def_resource)

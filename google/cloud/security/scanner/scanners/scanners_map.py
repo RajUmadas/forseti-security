@@ -19,6 +19,7 @@ from google.cloud.security.scanner.scanners.groups_scanner import GroupsScanner
 from google.cloud.security.scanner.scanners.iam_rules_scanner import IamPolicyScanner
 from google.cloud.security.scanner.scanners.bucket_rules_scanner import BucketsAclScanner
 from google.cloud.security.scanner.scanners.cloudsql_rules_scanner import CloudSqlAclScanner
+from google.cloud.security.scanner.scanners.fwe_rules_scanner import FweRulesScanner
 # pylint: enable=line-too-long
 
 
@@ -27,6 +28,7 @@ SCANNER_MAP = {
     'IamRulesEngine': IamPolicyScanner,
     'BucketsRulesEngine': BucketsAclScanner,
     'CloudSqlRulesEngine': CloudSqlAclScanner,
+    'FweRulesEngine': FweRulesScanner
 }
 
 FLATTENING_MAP = {
